@@ -1,0 +1,12 @@
+# /etc/anacrontab: configuration file for anacron
+
+# See anacron(8) and anacrontab(5) for details.
+
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/home/daniel/bin
+HOME=/home/daniel
+LOGNAME=daniel
+
+# These replace cron's entries
+# period delay job-identifier command
+1    10     borgbackup   DISPLAY=:0 /home/daniel/bin/borgbackup.sh &> /home/daniel/.borgbackup_running.log; mv /home/daniel/.borgbackup_running.log /home/daniel/.borgbackup.log
